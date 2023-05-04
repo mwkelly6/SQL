@@ -1,0 +1,26 @@
+--Create a shirt data base
+
+
+CREATE TABLE clothes (id INTEGER PRIMARY KEY, size TEXT, color TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO clothes VALUES (1, "XS", "WHITE", 4, 1);
+INSERT INTO clothes VALUES (2, "S", "WHITE", 3, 2);
+INSERT INTO clothes VALUES (3, "M", "WHITE", 5, 3);
+INSERT INTO clothes VALUES (4, "L", "WHITE", 3, 4);
+INSERT INTO clothes VALUES (5, "XL", "WHITE", 4, 5);
+INSERT INTO clothes VALUES (6, "S", "BLACK", 8, 2);
+INSERT INTO clothes VALUES (7, "M", "BLACK", 9, 3);
+INSERT INTO clothes VALUES (8, "L", "BLACK", 7, 4);
+INSERT INTO clothes VALUES (9, "XXL", "BLACK", 6, 6);
+INSERT INTO clothes VALUES (10, "M", "BLUE", 12, 3);
+INSERT INTO clothes VALUES (11, "XL", "BLUE", 10, 5);
+INSERT INTO clothes VALUES (12, "XXL", "BLUE", 9, 6);
+INSERT INTO clothes VALUES (13, "S", "RED", 14, 2);
+INSERT INTO clothes VALUES (14, "M", "RED", 18, 3);
+INSERT INTO clothes VALUES (15, "L", "RED", 10, 4);
+
+-- Order shirts by price
+SELECT * FROM clothes ORDER BY price;
+
+--Show amount of each size of shirt in order of size
+SELECT size, sum(quantity) FROM clothes GROUP BY price;
